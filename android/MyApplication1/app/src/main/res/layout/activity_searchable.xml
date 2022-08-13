@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchableActivity">
+
+
+    <ProgressBar
+        android:id="@+id/progressBar_cyclic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="170dp"
+        android:paddingTop="350dp"
+        android:indeterminateTint="@color/white"></ProgressBar>
+    <TextView
+        android:id="@+id/fetching"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="150dp"
+        android:paddingTop="450dp"
+        android:textAlignment="gravity"
+        android:text="Fetching weather"
+        android:textColor="@color/white"></TextView>
+
+<!--    <include layout="@layout/content_main" />-->
+
+
+<!--<com.google.android.material.appbar.AppBarLayout-->
+<!--    android:id="@+id/appBarLayout"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="45dp"-->
+<!--    android:theme="@style/Theme.MyApplication1.AppBarOverlay"-->
+<!--    android:backgroundTint="@color/black">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/cityNameDetails"-->
+<!--        android:layout_width="307dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:gravity="center"-->
+<!--        android:minHeight="?actionBarSize"-->
+<!--        android:text="Back  Seattle, Washington"-->
+<!--        android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />-->
+
+
+    <!--</com.google.android.material.appbar.AppBarLayout>-->
+
+    <TextView
+        android:id="@+id/randomtext"
+        android:layout_width="230dp"
+        android:layout_height="45dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:text="Search Result"
+        android:textColor="#abadb0"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="31dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card1"
+        android:layout_width="380dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="50dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="#272727"
+        app:cardCornerRadius="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/card1WeatherIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="45dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_partly_cloudy_day"></ImageView>
+
+        <TextView
+            android:id="@+id/card1Temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="0dp"
+            android:layout_marginBottom="30dp"
+            android:text="75"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/card1Weather"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="70dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:scrollHorizontally="true"
+            android:text="Heavy Snow"
+            android:textColor="#abadb0"
+            android:textSize="25dp"></TextView>
+
+        <TextView
+            android:id="@+id/City"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:text="City Name"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+
+            ></TextView>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom|end"
+            android:src="@drawable/information_outline"></ImageView>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card2"
+        android:layout_width="380dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        app:cardBackgroundColor="#272727"
+        app:cardCornerRadius="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card1">
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2Box1"
+                android:layout_width="83dp"
+                android:layout_height="150dp"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:text=""
+                app:cardBackgroundColor="#272727">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/water_percent" />
+
+                <TextView
+                    android:id="@+id/card2Humidity"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="80dp"
+                    android:gravity="center"
+                    android:text="12°F"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="110dp"
+                    android:gravity="center"
+                    android:text="Humidity"
+                    android:textColor="#abadb0"
+                    android:textSize="16dp"></TextView>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2Box2"
+                android:layout_width="95dp"
+                android:layout_height="150dp"
+                android:layout_row="1"
+                android:layout_column="2"
+                android:layout_columnSpan="2"
+                android:text=""
+                app:cardBackgroundColor="#272727">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/weather_windy" />
+
+                <TextView
+                    android:id="@+id/card2Windspeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="80dp"
+                    android:gravity="center"
+                    android:text="12°F"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="110dp"
+                    android:gravity="center"
+                    android:text="Wind Speed"
+                    android:textColor="#abadb0"
+                    android:textSize="16dp"></TextView>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2Box3"
+                android:layout_width="92dp"
+                android:layout_height="150dp"
+                android:layout_row="1"
+                android:layout_column="4"
+                android:layout_columnSpan="2"
+                android:text=""
+                app:cardBackgroundColor="#272727">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/eye_outline" />
+
+                <TextView
+                    android:id="@+id/card2Visibility"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="80dp"
+                    android:gravity="center"
+                    android:text="12°F"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="110dp"
+                    android:gravity="center"
+                    android:text="Visibility"
+                    android:textColor="#abadb0"
+                    android:textSize="16dp"></TextView>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2Box4"
+                android:layout_width="110dp"
+                android:layout_height="150dp"
+                android:layout_row="1"
+                android:layout_column="6"
+                android:layout_columnSpan="2"
+                android:text=""
+                app:cardBackgroundColor="#272727">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/gauge" />
+
+                <TextView
+                    android:id="@+id/card2Pressure"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="80dp"
+                    android:gravity="center"
+                    android:text="1209.09mb"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="110dp"
+                    android:gravity="center"
+                    android:text="Pressure"
+                    android:textColor="#abadb0"
+                    android:textSize="16dp"></TextView>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/info_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_row="1"
+                android:layout_column="4" />
+        </GridLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card3"
+        android:layout_width="380dp"
+        android:layout_height="290dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="5dp"
+
+        app:cardBackgroundColor="#272727"
+        app:cardCornerRadius="11dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card2">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:id="@+id/tableData"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="5dp">
+
+                    <TableRow
+                        android:layout_width="360dp"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:id="@+id/table11"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="10/11/2040"
+                            android:textColor="@color/white"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:id="@+id/table12"
+                            android:layout_width="50dp"
+                            android:layout_height="40dp"
+                            android:layout_column="1"
+                            android:src="@drawable/weather_partly_cloudy"
+                            android:text="First Name" />
+
+                        <TextView
+                            android:id="@+id/table13"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="54"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/table14"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:text="76"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="#313139" />
+
+                    <TableRow
+                        android:layout_width="360dp"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:id="@+id/table21"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="10/11/2040"
+                            android:textColor="@color/white"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:id="@+id/table22"
+                            android:layout_width="50dp"
+                            android:layout_height="40dp"
+                            android:layout_column="1"
+                            android:src="@drawable/weather_sunny"
+                            android:text="First Name" />
+
+                        <TextView
+                            android:id="@+id/table23"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/table24"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:text="76"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="#313139" />
+
+                    <TableRow
+                        android:layout_width="360dp"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:id="@+id/table31"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="10/11/2040"
+                            android:textColor="@color/white"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:id="@+id/table32"
+                            android:layout_width="50dp"
+                            android:layout_height="40dp"
+                            android:layout_column="1"
+                            android:src="@drawable/weather_sunny"
+                            android:text="First Name" />
+
+                        <TextView
+                            android:id="@+id/table33"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="54"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/table34"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:text="76"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="#313139" />
+
+                    <TableRow
+                        android:layout_width="360dp"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:id="@+id/table41"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:id="@+id/table42"
+                            android:layout_width="50dp"
+                            android:layout_height="40dp"
+                            android:layout_column="1"
+                            android:src="@drawable/weather_sunny"
+                            android:text="First Name" />
+
+                        <TextView
+                            android:id="@+id/table43"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="54"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/table44"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:text="76"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="#313139" />
+
+                    <TableRow
+                        android:layout_width="360dp"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:id="@+id/table51"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="10/11/2040"
+                            android:textColor="@color/white"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:id="@+id/table52"
+                            android:layout_width="50dp"
+                            android:layout_height="40dp"
+                            android:layout_column="1"
+                            android:src="@drawable/weather_cloudy"
+                            android:text="First Name" />
+
+                        <TextView
+                            android:id="@+id/table53"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="54"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/table54"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:text="76"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="#313139" />
+
+                    <TableRow
+                        android:layout_width="360dp"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:id="@+id/table61"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="10/11/2040"
+                            android:textColor="@color/white"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:id="@+id/table62"
+                            android:layout_width="50dp"
+                            android:layout_height="40dp"
+                            android:layout_column="1"
+                            android:src="@drawable/weather_night"
+                            android:text="First Name" />
+
+                        <TextView
+                            android:id="@+id/table63"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="54"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/fab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="51dp"
+                            android:layout_gravity="bottom|end"
+                            android:backgroundTint="@color/white"
+                            app:srcCompat="@drawable/map_marker_plus" />
+
+                        <TextView
+                            android:id="@+id/table64"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:text="76"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="#313139" />
+
+                    <TableRow
+                        android:layout_width="360dp"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:id="@+id/table71"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:id="@+id/table72"
+                            android:layout_width="50dp"
+                            android:layout_height="40dp"
+                            android:layout_column="1"
+                            android:src="@drawable/weather_sunny"
+                            android:text="First Name" />
+
+                        <TextView
+                            android:id="@+id/table73"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="54"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/table74"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:text="76"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="#313139" />
+
+                    <TableRow
+                        android:layout_width="360dp"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:id="@+id/table81"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="10/11/2040"
+                            android:textColor="@color/white"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:id="@+id/table82"
+                            android:layout_width="50dp"
+                            android:layout_height="40dp"
+                            android:layout_column="1"
+                            android:src="@drawable/weather_sunny"
+                            android:text="First Name" />
+
+                        <TextView
+                            android:id="@+id/table83"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="54"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/table84"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:text="76"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
